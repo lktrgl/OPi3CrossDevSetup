@@ -49,12 +49,9 @@ DO_LAUNCH_APPLICATION=y
 Save you changes and close the `script/prepare-crossplatform-environment.sh` file
 
 ### Step 3: Launching the setup script
-Make sure that you are allowing using the `sudo` with `root` privileges because the script is going to install some prerequisites packages.
-
-The script creates the `OPi3CrossDevSetup/OPi3_HelloWorld` folder then generates the simple application in C language that is to be assembled using the CMake script.
-
-Make sure that your Orange Pi Zero 3 is up and running at the IP address with the account credentials that you had set up during the **Step 2** of the present manual.
-
+Make sure that you are allowing using the `sudo` with `root` privileges because the script is going to install some prerequisites packages. 
+The script creates the `OPi3CrossDevSetup/OPi3_HelloWorld` folder then generates the simple application in C language that is to be assembled using the CMake script. 
+Make sure that your Orange Pi Zero 3 is up and running at the IP address with the account credentials that you had set up during the **Step 2** of the present manual. 
 Launch the following command and enjoy:
 
 ```bash
@@ -62,3 +59,6 @@ cd OPi3CrossDevSetup \
     && script/prepare-crossplatform-environment.sh
 ```
 
+## Useful information on Orange Pi Zero 3 development
+
+1. [Introduction to Digital Pins I/O](doc/orange_pi_zero_io_manual.md)
