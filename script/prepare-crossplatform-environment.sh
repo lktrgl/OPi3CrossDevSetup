@@ -117,7 +117,7 @@ function generate_folders_and_program_source_code()
         local cmd_mkdir="mkdir -p ${APPLICATION_FOLDER}/src && mkdir -p ${APPLICATION_FOLDER}/cmake"
         print_cmd "${cmd_mkdir}"
 
-        eval "${cmd_mkdir}"
+        eval "${cmd_mkdir}" || { echo "failed with code $? , exiting..."; exit 1; }
 
         cd ${APPLICATION_FOLDER} || { echo "failed changing folder to '${APPLICATION_FOLDER}'"; exit 1; }
 
@@ -402,7 +402,7 @@ function build_application()
         local cmd="chmod +x build.sh && ./build.sh"
         print_cmd "${cmd}"
 
-        eval "${cmd}"
+        eval "${cmd}" || { echo "failed with code $? , exiting..."; exit 1; }
 
     ) || { echo "application building failed!"; exit 1; }
 
@@ -489,7 +489,7 @@ function deploy_application()
         local cmd="chmod +x deploy.sh && ./deploy.sh"
         print_cmd "${cmd}"
 
-        eval "${cmd}"
+        eval "${cmd}" || { echo "failed with code $? , exiting..."; exit 1; }
 
     ) || { echo "application deployment failed!"; exit 1; }
 
@@ -550,7 +550,7 @@ function launch_application()
         local cmd="chmod +x launch.sh && ./launch.sh"
         print_cmd "${cmd}"
 
-        eval "${cmd}"
+        eval "${cmd}" || { echo "failed with code $? , exiting..."; exit 1; }
 
     ) || { echo "application running failed!"; exit 1; }
 
